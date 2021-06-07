@@ -3,10 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import PersonContext from './contexts/PersonContext';
+
+const persons = [
+  { id: 0, name: 'Msko', age: 33 },
+  { id: 1, name: 'Mike', age: 29 },
+];
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <PersonContext.Provider value={persons}>
+      <App />
+    </PersonContext.Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
